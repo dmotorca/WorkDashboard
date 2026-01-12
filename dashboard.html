@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Falcon ADA Project Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      header {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .upload-section {
+        margin-top: 20px;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border: 2px dashed #667eea;
+      }
+
+      .upload-section input {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .stat-card {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .stat-card h3 {
+        color: #666;
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .stat-card .value {
+        font-size: 36px;
+        font-weight: bold;
+        color: #667eea;
+      }
+
+      .charts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .chart-card {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .chart-card h2 {
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+
+      .table-card {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      th {
+        background: #f8f9fa;
+        font-weight: 600;
+        color: #333;
+      }
+
+      tr:hover {
+        background: #f8f9fa;
+      }
+
+      .status-badge {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .status-completed {
+        background: #d4edda;
+        color: #155724;
+      }
+
+      .status-progress {
+        background: #fff3cd;
+        color: #856404;
+      }
+
+      .status-notpossible {
+        background: #f8d7da;
+        color: #721c24;
+      }
+
+      .status-wirepulled {
+        background: #d1ecf1;
+        color: #0c5460;
+      }
+
+      .filter-section {
+        margin-bottom: 20px;
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .filter-section select {
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+
+      .no-data {
+        text-align: center;
+        padding: 40px;
+        color: #666;
+      }
+
+      button {
+        background: #667eea;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      button:hover {
+        background: #5568d3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🚆 Falcon ADA Project Dashboard</h1>
+        <p>Real-time tracking of device installations across all locations</p>
+
+        <div class="upload-section">
+          <label for="fileInput"><strong>Upload Excel/CSV File:</strong></label>
+          <input type="file" id="fileInput" accept=".xlsx,.xls,.csv" />
+          <button onclick="loadSampleData()">Load Sample Data</button>
+        </div>
+      </header>
+
+      <div class="stats-grid" id="statsGrid">
+        <div class="stat-card">
+          <h3>Total Devices</h3>
+          <div class="value" id="totalDevices">0</div>
+        </div>
+        <div class="stat-card">
+          <h3>Completed</h3>
+          <div class="value" id="completedDevices">0</div>
+        </div>
+        <div class="stat-card">
+          <h3>In Progress</h3>
+          <div class="value" id="inProgressDevices">0</div>
+        </div>
+        <div class="stat-card">
+          <h3>Completion Rate</h3>
+          <div class="value" id="completionRate">0%</div>
+        </div>
+      </div>
+
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h2>Install Status Breakdown</h2>
+          <canvas id="statusChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h2>Installs Over Time</h2>
+          <canvas id="timelineChart"></canvas>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <h2>Installation Details</h2>
+        <div class="filter-section">
+          <select id="statusFilter" onchange="filterTable()">
+            <option value="">All Statuses</option>
+            <option value="Completed">Completed</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Wire Pulled">Wire Pulled</option>
+            <option value="Not Possible">Not Possible</option>
+          </select>
+          <select id="typeFilter" onchange="filterTable()">
+            <option value="">All Types</option>
+          </select>
+        </div>
+        <div id="tableContainer"></div>
+      </div>
+    </div>
+
+    <script>
+      let allData = [];
+      let charts = {};
+
+      // File upload handler
+      document
+        .getElementById('fileInput')
+        .addEventListener('change', handleFile);
+
+      function handleFile(e) {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+          const data = new Uint8Array(e.target.result);
+          const workbook = XLSX.read(data, { type: 'array' });
+          const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+          const jsonData = XLSX.utils.sheet_to_json(firstSheet);
+
+          processData(jsonData);
+        };
+
+        reader.readAsArrayBuffer(file);
+      }
+
+      function loadSampleData() {
+        // Sample data based on your example
+        const sampleData = [
+          {
+            'Stop ID': 8375,
+            'Location Name': 'NE 7th Ave MAX Station',
+            'Device Quantity': 1,
+            'Install Status': 'Completed',
+            'Install Date': '05/09/25',
+            Volume: '70%',
+            'Install Type': 'Voice Announcement',
+          },
+          {
+            'Stop ID': 13124,
+            'Location Name': 'SE Main St MAX Station (Southside)',
+            'Device Quantity': 1,
+            'Install Status': 'Completed',
+            'Install Date': '05/07/25',
+            Volume: '70%',
+            'Install Type': 'Voice Announcement',
+          },
+          {
+            'Stop ID': 8342,
+            'Location Name': 'NE 7th Ave MAX Station',
+            'Device Quantity': 1,
+            'Install Status': 'Completed',
+            'Install Date': '05/09/25',
+            Volume: '70%',
+            'Install Type': 'Voice Announcement',
+          },
+          {
+            'Stop ID': 8349,
+            'Location Name': 'E 122nd EB1',
+            'Device Quantity': 1,
+            'Install Status': 'Completed',
+            'Install Date': '06/03/25',
+            Volume: '70%',
+            'Install Type': 'Voice Announcement',
+          },
+          {
+            'Stop ID': 8334,
+            'Location Name': 'Pioneer Square South MAX Station EB3',
+            'Device Quantity': 1,
+            'Install Status': 'Completed',
+            'Install Date': '06/06/25',
+            Volume: '70%',
+            'Install Type': 'Voice Announcement',
+          },
+          {
+            'Stop ID': 7787,
+            'Location Name': 'SW 6th & Pine MAX Station',
+            'Device Quantity': 1,
+            'Install Status': 'Completed',
+            'Install Date': '12/02/25',
+            Volume: '85%',
+            'Install Type': 'MAX',
+          },
+        ];
+
+        processData(sampleData);
+      }
+
+      function processData(data) {
+        allData = data;
+        updateStats();
+        updateCharts();
+        updateTable();
+        updateFilters();
+      }
+
+      function updateStats() {
+        const total = allData.length;
+        const completed = allData.filter(
+          (d) => d['Install Status'] === 'Completed'
+        ).length;
+        const inProgress = allData.filter(
+          (d) => d['Install Status'] === 'In Progress'
+        ).length;
+        const completionRate =
+          total > 0 ? Math.round((completed / total) * 100) : 0;
+
+        document.getElementById('totalDevices').textContent = total;
+        document.getElementById('completedDevices').textContent = completed;
+        document.getElementById('inProgressDevices').textContent = inProgress;
+        document.getElementById('completionRate').textContent =
+          completionRate + '%';
+      }
+
+      function updateCharts() {
+        // Status breakdown chart
+        const statusCounts = {};
+        allData.forEach((d) => {
+          const status = d['Install Status'] || 'Unknown';
+          statusCounts[status] = (statusCounts[status] || 0) + 1;
+        });
+
+        if (charts.statusChart) charts.statusChart.destroy();
+
+        const ctx1 = document.getElementById('statusChart').getContext('2d');
+        charts.statusChart = new Chart(ctx1, {
+          type: 'doughnut',
+          data: {
+            labels: Object.keys(statusCounts),
+            datasets: [
+              {
+                data: Object.values(statusCounts),
+                backgroundColor: [
+                  '#10b981',
+                  '#f59e0b',
+                  '#ef4444',
+                  '#3b82f6',
+                  '#8b5cf6',
+                ],
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+              legend: {
+                position: 'bottom',
+              },
+            },
+          },
+        });
+
+        // Timeline chart
+        const dateData = {};
+        allData.forEach((d) => {
+          const date = d['Install Date'];
+          if (date) {
+            dateData[date] = (dateData[date] || 0) + 1;
+          }
+        });
+
+        const sortedDates = Object.keys(dateData).sort((a, b) => {
+          const dateA = new Date(a);
+          const dateB = new Date(b);
+          return dateA - dateB;
+        });
+
+        let cumulative = 0;
+        const cumulativeData = sortedDates.map((date) => {
+          cumulative += dateData[date];
+          return cumulative;
+        });
+
+        if (charts.timelineChart) charts.timelineChart.destroy();
+
+        const ctx2 = document.getElementById('timelineChart').getContext('2d');
+        charts.timelineChart = new Chart(ctx2, {
+          type: 'line',
+          data: {
+            labels: sortedDates,
+            datasets: [
+              {
+                label: 'Cumulative Installs',
+                data: cumulativeData,
+                borderColor: '#667eea',
+                backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                tension: 0.4,
+                fill: true,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+              legend: {
+                display: false,
+              },
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+          },
+        });
+      }
+
+      function updateTable() {
+        const container = document.getElementById('tableContainer');
+
+        if (allData.length === 0) {
+          container.innerHTML =
+            '<div class="no-data">No data available. Please upload a file or load sample data.</div>';
+          return;
+        }
+
+        let html = '<table><thead><tr>';
+        html += '<th>Stop ID</th>';
+        html += '<th>Location Name</th>';
+        html += '<th>Device Qty</th>';
+        html += '<th>Status</th>';
+        html += '<th>Install Date</th>';
+        html += '<th>Volume</th>';
+        html += '<th>Type</th>';
+        html += '</tr></thead><tbody>';
+
+        const statusFilter = document.getElementById('statusFilter').value;
+        const typeFilter = document.getElementById('typeFilter').value;
+
+        const filteredData = allData.filter((d) => {
+          if (statusFilter && d['Install Status'] !== statusFilter)
+            return false;
+          if (typeFilter && d['Install Type'] !== typeFilter) return false;
+          return true;
+        });
+
+        filteredData.forEach((d) => {
+          const status = d['Install Status'] || 'Unknown';
+          const statusClass = status.toLowerCase().replace(/\s+/g, '');
+
+          html += '<tr>';
+          html += `<td>${d['Stop ID'] || 'N/A'}</td>`;
+          html += `<td>${d['Location Name'] || 'N/A'}</td>`;
+          html += `<td>${d['Device Quantity'] || 0}</td>`;
+          html += `<td><span class="status-badge status-${statusClass}">${status}</span></td>`;
+          html += `<td>${d['Install Date'] || 'N/A'}</td>`;
+          html += `<td>${d['Volume'] || 'N/A'}</td>`;
+          html += `<td>${d['Install Type'] || 'N/A'}</td>`;
+          html += '</tr>';
+        });
+
+        html += '</tbody></table>';
+        container.innerHTML = html;
+      }
+
+      function updateFilters() {
+        const types = [
+          ...new Set(allData.map((d) => d['Install Type']).filter(Boolean)),
+        ];
+        const typeFilter = document.getElementById('typeFilter');
+
+        typeFilter.innerHTML = '<option value="">All Types</option>';
+        types.forEach((type) => {
+          typeFilter.innerHTML += `<option value="${type}">${type}</option>`;
+        });
+      }
+
+      function filterTable() {
+        updateTable();
+      }
+
+      // Load sample data on page load
+      window.addEventListener('load', loadSampleData);
+    </script>
+  </body>
+</html>
