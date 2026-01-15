@@ -138,23 +138,23 @@ Stop ID,Location Name,Completion Status,Quantity of Falcons,MAX Lines,Date Insta
 13139,SE Main St,Completed,1,Green Line,5/7/25
 13449,Civic Drive WB,Not Started,1,Blue Line,TBD
 13450,Civic Drive EB,Not Started,1,Blue Line,TBD
-13710,Lincoln St/SW 3rd Ave SB,Not Started,1,Orange Line,TBD
-13711,South Waterfront/S Moody Ave,"Wire Pulled, Waiting on Mount",2,Orange Line,TBD
+13710,Lincoln St/SW 3rd Ave SB,Completed,1,Orange Line,1/14/26
+13711,South Waterfront/S Moody Ave,Completed,2,Orange Line,1/13/26
 13712,OMSI/SE Water Ave EB,Completed,2,Orange Line,12/18/25
 13713,Clinton/SE 12th Ave,Completed,1,Orange Line,1/6/26
-13714,SE 17th Ave & Rhine St,"Wire Pulled, Waiting on Mount",1,Orange Line,TBD
+13714,SE 17th Ave & Rhine St,Completed,1,Orange Line,1/8/26
 13715,SE 17th Ave & Holgate Blvd,Completed,1,Orange Line,12/24/25
 13716,SE Bybee Blvd,Not Started,2,Orange Line,TBD
-13717,SE Tacoma/Johnson Creek,"Wire Pulled, Waiting on Mount",1,Orange Line,TBD
+13717,SE Tacoma/Johnson Creek,Completed,1,Orange Line,1/8/26
 13718,Milwaukie/Main St,Not Started,2,Orange Line,TBD
 13720,SE Park Ave,Completed,4,Orange Line,7/14/25
 13721,Milwaukie/Main St,Not Started,2,Orange Line,TBD
-13722,SE Tacoma/Johnson Creek,"Wire Pulled, Waiting on Mount",1,Orange Line,TBD
+13722,SE Tacoma/Johnson Creek,Completed,1,Orange Line,1/8/26
 13723,SE Bybee Blvd,Not Started,2,Orange Line,TBD
 13724,SE 17th Ave & Holgate Blvd,Completed,1,Orange Line,12/24/25
-13725,SE 17th Ave & Rhine St,"Wire Pulled, Waiting on Mount",1,Orange Line,TBD
+13725,SE 17th Ave & Rhine St,Completed,1,Orange Line,1/8/26
 13726,Clinton/SE 12th Ave,Completed,1,Orange Line,1/6/26
 13727,OMSI/SE Water Ave WB,Completed,2,Orange Line,12/18/25
-13728,South Waterfront/S Moody Ave,"Wire Pulled, Waiting on Mount",2,Orange Line,TBD
-13729,Lincoln St/SW 3rd Ave NB,Not Started,1,Orange Line,TBD
+13728,South Waterfront/S Moody Ave,Completed,2,Orange Line,1/13/26
+13729,Lincoln St/SW 3rd Ave NB,Completed,1,Orange Line,1/14/26
 14250,Gateway North,Completed,2,Red Line,11/3/25
