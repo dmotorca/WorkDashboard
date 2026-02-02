@@ -26,19 +26,19 @@ Stop ID,Location Name,Completion Status,Quantity of Falcons,MAX Lines,Date Insta
 8349,E 122nd Ave EB,Completed,1,Blue Line,5/29/25
 8350,E 148th Ave EB,Completed,1,Blue Line,7/17/25
 8351,E 162nd Ave EB,Completed,1,Blue Line,6/9/25
-8352,E 172nd Ave EB,Not Started,1,Blue Line,TBD
-8353,E 181st Ave EB,Not Started,1,Blue Line,TBD
-8354,Rockwood/E 188th Ave EB,Not Started,1,Blue Line,TBD
-8355,Ruby Junction/E 197th Ave EB,Not Started,1,Blue Line,TBD
+8352,E 172nd Ave EB,Completed,1,Blue Line,1/28/26
+8353,E 181st Ave EB,Completed,1,Blue Line,2/2/26
+8354,Rockwood/E 188th Ave EB,Completed,2,Blue Line,2/2/26
+8355,Ruby Junction/E 197th Ave EB,Completed,1,Blue Line,2/2/26
 8356,Gresham City Hall EB,Not Started,1,Blue Line,TBD
 8357,Gresham Central TC EB,Not Started,1,Blue Line,TBD
 8359,Cleveland Ave,Completed,2,Blue Line,11/3/25
 8360,Gresham Central TC WB,Not Started,1,Blue Line,TBD
 8361,Gresham City Hall WB,Not Started,1,Blue Line,TBD
-8362,Ruby Junction/E 197th Ave WB,Not Started,1,Blue Line,TBD
-8363,Rockwood/E 188th Ave WB,Not Started,1,Blue Line,TBD
-8364,E 181st Ave WB,Not Started,1,Blue Line,TBD
-8365,E 172nd Ave WB,Not Started,1,Blue Line,TBD
+8362,Ruby Junction/E 197th Ave WB,Completed,1,Blue Line,TBD
+8363,Rockwood/E 188th Ave WB,Completed,1,Blue Line,2/2/26
+8364,E 181st Ave WB,Completed,1,Blue Line,2/2/26
+8365,E 172nd Ave WB,Completed,1,Blue Line,1/28/26
 8366,E 162nd Ave WB,Completed,1,Blue Line,6/9/25
 8367,E 148th Ave WB,Completed,1,Blue Line,7/17/25
 8369,E 102nd Ave WB,Completed,1,Blue Line,7/16/25
@@ -94,12 +94,11 @@ Stop ID,Location Name,Completion Status,Quantity of Falcons,MAX Lines,Date Insta
 10120,Washington Park EB,Not Started,2,"Red Line,Blue Line",TBD
 10121,Washington Park WB,Not Started,2,"Red Line,Blue Line",TBD
 10293,PSU South/SW 6th & College St,Completed,2,"Green Line,Yellow Line,Bus Mall",12/3/25
-10572,Parkrose/Sumner TC,Not Started,1,Red Line,TBD
-10573,Parkrose/Sumner TC,Not Started,1,Red Line,TBD
-10574,Cascades,Not Started,2,Red Line,TBD
-10575,Cascades,Not Started,2,Red Line,TBD
-10576,Mt Hood Ave,Not Started,2,Red Line,TBD
-10577,Mt Hood Ave ,Not Started,2,Red Line,TBD
+10572/10573,Parkrose/Sumner TC,Completed,1,Red Line,1/24/26
+10574,Cascades,Completed,2,Red Line,1/21/26
+10575,Cascades,Not Possible,2,Red Line,TBD
+10576,Mt Hood Ave,Completed,2,Red Line,1/23/26
+10577,Mt Hood Ave ,Completed,2,Red Line,1/23/26
 10579,Portland International Airport,Not Started,2,Red Line,TBD
 11498,Expo Center ,Not Started,2,Yellow Line,TBD
 11499,Delta Park/Vanport SB,Completed,2,Yellow Line,9/3/25
@@ -136,21 +135,21 @@ Stop ID,Location Name,Completion Status,Quantity of Falcons,MAX Lines,Date Insta
 13137,SE Powell Blvd,Completed,1,Green Line,9/23/25
 13138,SE Division St,Completed,1,Green Line,9/11/25
 13139,SE Main St,Completed,1,Green Line,5/7/25
-13449,Civic Drive WB,Not Started,1,Blue Line,TBD
-13450,Civic Drive EB,Not Started,1,Blue Line,TBD
+13449,Civic Drive WB,In Progress,1,Blue Line,TBD
+13450,Civic Drive EB,In Progress,1,Blue Line,TBD
 13710,Lincoln St/SW 3rd Ave SB,Completed,1,Orange Line,1/14/26
 13711,South Waterfront/S Moody Ave,Completed,2,Orange Line,1/13/26
 13712,OMSI/SE Water Ave EB,Completed,2,Orange Line,12/18/25
 13713,Clinton/SE 12th Ave,Completed,1,Orange Line,1/6/26
 13714,SE 17th Ave & Rhine St,Completed,1,Orange Line,1/8/26
 13715,SE 17th Ave & Holgate Blvd,Completed,1,Orange Line,12/24/25
-13716,SE Bybee Blvd,Not Started,2,Orange Line,TBD
+13716,SE Bybee Blvd,In Progress,2,Orange Line,TBD
 13717,SE Tacoma/Johnson Creek,Completed,1,Orange Line,1/8/26
-13718,Milwaukie/Main St,Not Started,2,Orange Line,TBD
+13718,Milwaukie/Main St,In Progress,2,Orange Line,TBD
 13720,SE Park Ave,Completed,4,Orange Line,7/14/25
-13721,Milwaukie/Main St,Not Started,2,Orange Line,TBD
+13721,Milwaukie/Main St,In Progress,2,Orange Line,TBD
 13722,SE Tacoma/Johnson Creek,Completed,1,Orange Line,1/8/26
-13723,SE Bybee Blvd,Not Started,2,Orange Line,TBD
+13723,SE Bybee Blvd,In Progress,2,Orange Line,TBD
 13724,SE 17th Ave & Holgate Blvd,Completed,1,Orange Line,12/24/25
 13725,SE 17th Ave & Rhine St,Completed,1,Orange Line,1/8/26
 13726,Clinton/SE 12th Ave,Completed,1,Orange Line,1/6/26
