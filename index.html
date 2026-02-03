@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,8 +13,9 @@
       }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-          Oxygen, Ubuntu, Cantarell, sans-serif;
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+          Cantarell, sans-serif;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         min-height: 100vh;
         padding: 20px;
@@ -323,9 +324,8 @@
             const data = parseCSV(csvText);
             if (data && data.length > 0) {
               processData(data);
-              document.getElementById(
-                'lastUpdated'
-              ).textContent = `Last updated: ${new Date().toLocaleString()}`;
+              document.getElementById('lastUpdated').textContent =
+                `Last updated: ${new Date().toLocaleString()}`;
             } else {
               showError('No data found in data.csv');
             }
@@ -334,7 +334,7 @@
             showError(
               'Error loading data.csv: ' +
                 error.message +
-                '. Make sure data.csv is in the same folder as index.html'
+                '. Make sure data.csv is in the same folder as index.html',
             );
             console.error('Load error:', error);
           });
@@ -384,9 +384,8 @@
       }
 
       function showError(message) {
-        document.getElementById(
-          'lastUpdated'
-        ).innerHTML = `<div class="error-message">${message}</div>`;
+        document.getElementById('lastUpdated').innerHTML =
+          `<div class="error-message">${message}</div>`;
       }
 
       function parseDate(dateStr) {
@@ -436,7 +435,7 @@
               'Stop ID': String(row['Stop ID']).trim(),
               'Location Name': String(row['Location Name']).trim(),
               'Completion Status': String(
-                row['Completion Status'] || ''
+                row['Completion Status'] || '',
               ).trim(),
               'Quantity of Falcons': parseInt(row['Quantity of Falcons']) || 0,
               'MAX Lines': String(row['MAX Lines'] || '').trim(),
@@ -454,10 +453,10 @@
         const totalLocs = allData.length;
         const totalDevs = allData.reduce(
           (sum, d) => sum + d['Quantity of Falcons'],
-          0
+          0,
         );
         const completed = allData.filter(
-          (d) => d['Completion Status'] === 'Completed'
+          (d) => d['Completion Status'] === 'Completed',
         ).length;
         const completedDevs = allData
           .filter((d) => d['Completion Status'] === 'Completed')
@@ -467,13 +466,11 @@
 
         document.getElementById('totalLocations').textContent = totalLocs;
         document.getElementById('totalDevices').textContent = totalDevs;
-        document.getElementById(
-          'deviceBreakdown'
-        ).textContent = `${totalLocs} locations`;
+        document.getElementById('deviceBreakdown').textContent =
+          `${totalLocs} locations`;
         document.getElementById('completedLocations').textContent = completed;
-        document.getElementById(
-          'completedDevices'
-        ).textContent = `${completedDevs} devices`;
+        document.getElementById('completedDevices').textContent =
+          `${completedDevs} devices`;
         document.getElementById('completionRate').textContent =
           completionRate + '%';
       }
@@ -597,13 +594,13 @@
 
         if (filterValue === 'completed') {
           filteredData = allData.filter(
-            (d) => d['Completion Status'] === 'Completed'
+            (d) => d['Completion Status'] === 'Completed',
           );
           chartColor = '#10b981';
           chartLabel = 'Installed Devices';
         } else if (filterValue === 'notstarted') {
           filteredData = allData.filter(
-            (d) => d['Completion Status'] === 'Not Started'
+            (d) => d['Completion Status'] === 'Not Started',
           );
           chartColor = '#ef4444';
           chartLabel = 'Planned Installs';
