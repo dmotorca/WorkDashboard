@@ -11,16 +11,16 @@ Stop ID,Location Name,Completion Status,Quantity of Falcons,MAX Lines,Date Insta
 7787,SW 6th & Pine St,Completed,2,"Green Line,Yellow Line,Bus Mall",12/2/25
 8333,Library/SW 9th Ave EB,Completed,2,"Red Line,Blue Line",7/28/25
 8334,Pioneer Square South,Completed,3,"Red Line,Blue Line",7/23/25
-8336,Yamhill District,Not Started,2,"Red Line,Blue Line",TBD
-8337,Oak/SW 1st Ave EB,Not Started,2,"Red Line,Blue Line",TBD
-8339,Old Town/Chinatown EB,Not Started,2,"Red Line,Blue Line",TBD
-8340,Rose Quarter TC EB,Not Started,2,"Red Line,Green Line,Blue Line",TBD
-8341,Convention Center EB,Not Started,2,"Red Line,Green Line,Blue Line",TBD
+8336,Yamhill District,Not Started,1,"Red Line,Blue Line",TBD
+8337,Oak/SW 1st Ave EB,Not Started,1,"Red Line,Blue Line",TBD
+8339,Old Town/Chinatown EB,Not Started,1,"Red Line,Blue Line",TBD
+8340,Rose Quarter TC EB,Completed,2,"Red Line,Green Line,Blue Line",2/17/26
+8341,Convention Center EB,Completed,2,"Red Line,Green Line,Blue Line",2/17/26
 8342,NE 7th Ave EB,"Not Possible,Completed",1,"Red Line,Green Line,Blue Line",5/7/25
 8343,Lloyd Center/NE 11th Ave EB,Completed,2,"Red Line,Green Line,Blue Line",7/28/25
-8344,Hollywood TC EB,Not Started,2,"Red Line,Green Line,Blue Line",TBD
-8345,NE 60th Ave EB,Not Started,2,"Red Line,Green Line,Blue Line",TBD
-8346,NE 82nd Ave EB,Not Started,2,"Red Line,Green Line,Blue Line",TBD
+8344,Hollywood TC ,In Progress,1,"Red Line,Green Line,Blue Line",TBD
+8345,NE 60th Ave ,In Progress,1,"Red Line,Green Line,Blue Line",TBD
+8346,NE 82nd Ave ,In Progress,1,"Red Line,Green Line,Blue Line",TBD
 8347,Gateway/NE 99th Ave TC MAX Station,Completed,3,"Red Line,Green Line,Blue Line",11/20/25
 8348,E 102nd Ave EB,Completed,1,Blue Line,7/16/25
 8349,E 122nd Ave EB,Completed,1,Blue Line,5/29/25
@@ -28,28 +28,25 @@ Stop ID,Location Name,Completion Status,Quantity of Falcons,MAX Lines,Date Insta
 8351,E 162nd Ave EB,Completed,1,Blue Line,6/9/25
 8352,E 172nd Ave EB,Completed,1,Blue Line,1/28/26
 8353,E 181st Ave EB,Completed,1,Blue Line,2/2/26
-8354,Rockwood/E 188th Ave EB,Completed,2,Blue Line,2/2/26
+8354,Rockwood/E 188th Ave EB,Completed,1,Blue Line,2/2/26
 8355,Ruby Junction/E 197th Ave EB,Completed,1,Blue Line,2/2/26
-8356,Gresham City Hall EB,Not Started,1,Blue Line,TBD
-8357,Gresham Central TC EB,Not Started,1,Blue Line,TBD
+8356,Gresham City Hall EB,In Progress,1,Blue Line,TBD
+8357,Gresham Central TC EB,In Progress,1,Blue Line,TBD
 8359,Cleveland Ave,Completed,2,Blue Line,11/3/25
-8360,Gresham Central TC WB,Not Started,1,Blue Line,TBD
-8361,Gresham City Hall WB,Not Started,1,Blue Line,TBD
-8362,Ruby Junction/E 197th Ave WB,Completed,1,Blue Line,TBD
+8360,Gresham Central TC WB,In Progress,1,Blue Line,TBD
+8361,Gresham City Hall WB,In Progress,1,Blue Line,TBD
+8362,Ruby Junction/E 197th Ave WB,Completed,1,Blue Line,2/2/26
 8363,Rockwood/E 188th Ave WB,Completed,1,Blue Line,2/2/26
-8364,E 181st Ave WB,Completed,1,Blue Line,2/2/26
+8364,E 181st Ave WB,Completed,1,Blue Line,1/28/26
 8365,E 172nd Ave WB,Completed,1,Blue Line,1/28/26
 8366,E 162nd Ave WB,Completed,1,Blue Line,6/9/25
 8367,E 148th Ave WB,Completed,1,Blue Line,7/17/25
 8369,E 102nd Ave WB,Completed,1,Blue Line,7/16/25
 8370,Gateway/NE 99th Ave TC MAX Station,Completed,5,"Red Line,Green Line,Blue Line",11/20/25
-8371,NE 82nd Ave WB,Not Started,2,"Red Line,Green Line,Blue Line",TBD
-8372,NE 60th Ave WB,Not Started,2,"Red Line,Green Line,Blue Line",TBD
-8373,Hollywood TC WB,Not Started,2,"Red Line,Green Line,Blue Line",TBD
 8374,Lloyd Center/NE 11th Ave WB,Completed,2,"Red Line,Green Line,Blue Line",7/28/25
 8375,NE 7th Ave WB,"Not Possible,Completed",1,"Red Line,Green Line,Blue Line",5/7/25
-8376,Convention Center WB,Not Started,2,"Red Line,Green Line,Blue Line",TBD
-8377,Rose Quarter TC WB,Not Started,2,"Red Line,Green Line,Blue Line",TBD
+8376,Convention Center WB,Completed,2,"Red Line,Green Line,Blue Line",2/17/26
+8377,Rose Quarter TC WB,Completed,2,"Red Line,Green Line,Blue Line",2/17/26
 8378,Old Town/Chinatown WB,Not Started,2,"Red Line,Blue Line",TBD
 8380,Oak/SW 1st Ave WB,Not Started,2,"Red Line,Blue Line",TBD
 8381,Morrison/SW 3rd Ave,Not Started,2,"Red Line,Blue Line",TBD
@@ -61,9 +58,7 @@ Stop ID,Location Name,Completion Status,Quantity of Falcons,MAX Lines,Date Insta
 9624,Sunset TC WB,Completed,3,"Red Line,Blue Line",10/27/25
 9757,Providence Park WB,Completed,2,"Red Line,Blue Line",8/4/25
 9758,Providence Park EB,Completed,2,"Red Line,Blue Line",8/4/25
-9818,Beaverton TC WB,Not Started,2,"Red Line,Blue Line",TBD
 9819,Beaverton Creek WB,Not Started,2,"Red Line,Blue Line",TBD
-9821,Beaverton TC EB,Not Started,3,"Red Line,Blue Line",TBD
 9822,Beaverton Creek EB,Not Started,2,"Red Line,Blue Line",TBD
 9823,Beaverton Central WB,Not Started,2,"Red Line,Blue Line",TBD
 9824,Beaverton Central EB,Not Started,2,"Red Line,Blue Line",TBD
@@ -94,7 +89,7 @@ Stop ID,Location Name,Completion Status,Quantity of Falcons,MAX Lines,Date Insta
 10120,Washington Park EB,Not Started,2,"Red Line,Blue Line",TBD
 10121,Washington Park WB,Not Started,2,"Red Line,Blue Line",TBD
 10293,PSU South/SW 6th & College St,Completed,2,"Green Line,Yellow Line,Bus Mall",12/3/25
-10572/10573,Parkrose/Sumner TC,Completed,1,Red Line,1/24/26
+10572/10573,Parkrose/Sumner TC,In Progress,1,Red Line,TBD
 10574,Cascades,Completed,2,Red Line,1/21/26
 10575,Cascades,Not Possible,2,Red Line,TBD
 10576,Mt Hood Ave,Completed,2,Red Line,1/23/26
@@ -143,13 +138,13 @@ Stop ID,Location Name,Completion Status,Quantity of Falcons,MAX Lines,Date Insta
 13713,Clinton/SE 12th Ave,Completed,1,Orange Line,1/6/26
 13714,SE 17th Ave & Rhine St,Completed,1,Orange Line,1/8/26
 13715,SE 17th Ave & Holgate Blvd,Completed,1,Orange Line,12/24/25
-13716,SE Bybee Blvd,In Progress,1,Orange Line,TBD
+13716,SE Bybee Blvd,In Progress,2,Orange Line,TBD
 13717,SE Tacoma/Johnson Creek,Completed,1,Orange Line,1/8/26
 13718,Milwaukie/Main St,In Progress,2,Orange Line,TBD
 13720,SE Park Ave,Completed,4,Orange Line,7/14/25
 13721,Milwaukie/Main St,In Progress,2,Orange Line,TBD
 13722,SE Tacoma/Johnson Creek,Completed,1,Orange Line,1/8/26
-13723,SE Bybee Blvd,In Progress,1,Orange Line,TBD
+13723,SE Bybee Blvd,In Progress,2,Orange Line,TBD
 13724,SE 17th Ave & Holgate Blvd,Completed,1,Orange Line,12/24/25
 13725,SE 17th Ave & Rhine St,Completed,1,Orange Line,1/8/26
 13726,Clinton/SE 12th Ave,Completed,1,Orange Line,1/6/26
